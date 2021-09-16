@@ -12357,3 +12357,10 @@ a.text-dark:focus {
   color: black;
 }
 
+.detail-box {
+  display: flex;
+  justify-content: space-between;
+  font-style: italic;
+  color: #777;
+}
+

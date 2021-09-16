@@ -6,10 +6,13 @@
   </div>
 
 <div class="container">
-    <h3>Autore: {{$post->author}}</h3>
+    <h1>{{ $post->title }}</h1>
+    <div class="detail-box">
+        <div>Scritto da: {{$post->author}}</div>
+        <div>Pubblicato il: {{ $post->created_at}}</div>
+    </div>
     <p>{{ $post->text_content }}</p>
     <img src="{{ $post->img_path }}" alt="">
-    <div>Pubblicato il: {{ $post->created_at}}</div>
 
 </div>
 
