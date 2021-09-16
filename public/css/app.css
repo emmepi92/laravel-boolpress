@@ -12332,3 +12332,27 @@ a.text-dark:focus {
   }
 }
 
+.container-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container-button button {
+  margin-bottom: 15px;
+  border: none;
+  background-color: white;
+  box-shadow: 3px 3px 2px #c4c4c4;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.container-button button a {
+  color: #555;
+  font-size: 20px;
+}
+
+.container-button button a:hover {
+  text-decoration: none;
+  color: black;
+}
+

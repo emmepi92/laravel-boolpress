@@ -13,16 +13,15 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {   
-        //contenuto
-        //autore
-        //immagine
-        //
+
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->char('title',150);
             $table->text('text_content');
             $table->char('author',255);
             $table->text ('img_path');
             $table->timestamps();
+            //commenti forse ralazione 1 a molti
         });
     }
 

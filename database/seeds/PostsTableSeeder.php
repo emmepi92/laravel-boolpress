@@ -15,9 +15,10 @@ class PostsTableSeeder extends Seeder
     {
         for ($i=0;$i <50; $i++) {
             $post= new Post();
-            $post->text_content = $faker->paragraph(5);
+            $post->title = $faker->words(3,true);
+            $post->text_content = $faker->paragraph(15);
             $post->author = $faker->words(2,true);
-            $post->img_path = $faker->imageUrl(600, 300, 'animals', true);
+            $post->img_path = $faker->imageUrl(600, 300, 'blog', true);
             $post->save();
         }
     }
