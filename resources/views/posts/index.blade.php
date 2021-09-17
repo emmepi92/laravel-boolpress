@@ -24,7 +24,20 @@
               <td>{{ $post->title }}</td>
               <td>{{ $post->author }}</td>
               <td>{{ $post->created_at }}</td>
-              <td><a href="{{ route('posts.show', $post)}}"><i class="bi bi-zoom-in"></i></a></td>
+              <td>
+                <a href="{{ route('posts.show', $post)}}"><i class="bi bi-zoom-in"></i></a>
+                <a href="{{ route('posts.edit', $post)}}"><i class="bi bi-pencil"></i></a>
+                
+                <form action=" {{ route('posts.destroy', $post) }} " method="POST">
+                  @csrf
+                  @method('DELETE')                  
+                  {{-- <input > --}}
+                  <button type="submit">
+                    <i class="bi bi-trash"></i>
+
+                  </button>
+                </form>
+              </td>
             </tr>
                 
             @endforeach

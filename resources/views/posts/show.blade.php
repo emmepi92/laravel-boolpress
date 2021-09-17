@@ -3,7 +3,7 @@
 @section('content')
 <div class="container container-button">
     <button><a href=" {{ route('posts.index') }} ">Tutti i post</a></button>
-  </div>
+</div>
 
 <div class="container">
     <h1>{{ $post->title }}</h1>
