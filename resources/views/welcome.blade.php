@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ route('posts.index') }}">Tutti i post</a>
+                    <a href="{{ route('posts.index') }}">Elenco dei post</a>
                 </div>
             </div>
         </div>

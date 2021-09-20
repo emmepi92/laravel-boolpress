@@ -27,16 +27,36 @@
               <td>
                 <a href="{{ route('posts.show', $post)}}"><i class="bi bi-zoom-in"></i></a>
                 <a href="{{ route('posts.edit', $post)}}"><i class="bi bi-pencil"></i></a>
-                
-                <form action=" {{ route('posts.destroy', $post) }} " method="POST">
-                  @csrf
-                  @method('DELETE')                  
-                  {{-- <input > --}}
-                  <button type="submit">
-                    <i class="bi bi-trash"></i>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{ $post->id }}">
+                  <i class="bi bi-trash"></i>
+                </button>
 
-                  </button>
-                </form>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal{{ $post->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Attenzione</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        Sicuro di voler eliminare il post?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                        <form action=" {{ route('posts.destroy', $post) }} " method="POST">
+                          @csrf
+                          @method('DELETE')                  
+                          <button type="submit" class="btn btn-primary">
+                            Elimina
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </td>
             </tr>
                 
