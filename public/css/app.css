@@ -12364,3 +12364,12 @@ a.text-dark:focus {
   color: #777;
 }
 
+.no-decorations {
+  color: inherit;
+}
+
+.no-decorations:hover {
+  color: inherit;
+  text-decoration: none;
+}
+

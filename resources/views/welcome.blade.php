@@ -86,11 +86,13 @@
                 <div class="links">
                     <a href="{{ route('home') }}">Tutti i post</a>
                 </div>
+                
+                @if (Auth::check())
                 <br>
-
                 <div class="links">
                     <a href="{{ route('posts.index') }}">Elenco dei post</a>
-                </div>
+                </div>                    
+                @endif
             </div>
         </div>
     </body>
