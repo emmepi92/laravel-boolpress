@@ -10,6 +10,11 @@ class Post extends Model
         'title',
         'text_content',
         'author',
-        'img_path'
+        'img_path',
+        'category_id'
     ];
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -10,6 +10,7 @@
     <div class="detail-box">
         <div>Scritto da: {{$post->author}}</div>
         <div>Pubblicato il: {{ $post->created_at}}</div>
+        <div>Categoria: {{ $post->category->name }}</div>
     </div>
     <p>{{ $post->text_content }}</p>
     <img src="{{ $post->img_path }}" alt="">

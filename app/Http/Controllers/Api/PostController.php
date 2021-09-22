@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Post;
-use App\Category;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('posts.index', compact('posts'));
+	    return  response()->json($posts);
     }
 
     /**
@@ -26,8 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        return view('posts.create', compact('categories'));
+        //
     }
 
     /**
@@ -38,24 +37,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request); debug
-
-        $request->validate([
-            'text_content' => 'string',
-            'img_path' => 'url'
-        ]);
-
-        $data= $request->all();
-
-        $post = new Post();
-        $post->title = $data['title'];
-        $post->text_content = $data['text_content'];
-        $post->author = $data['author'];
-        $post->img_path = $data['img_path'];
-        $post->category_id = $data['category_id'];
-        $post->save();
-
-        return redirect()->route('posts.show', $post);
+        //
     }
 
     /**
@@ -66,8 +48,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        return view('posts.show', compact('post'));
+        //
     }
 
     /**
@@ -76,11 +57,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        $categories = Category::all();
-
-        return view('posts.edit', compact('post', 'categories'));
+        //
     }
 
     /**
@@ -90,11 +69,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        $data = $request->all();
-	    $post->update($data);
-	    return redirect()->route ('posts.show', $post);
+        //
     }
 
     /**
@@ -103,10 +80,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        $post->delete();
-
-        return redirect()->route('posts.index');
+        //
     }
 }

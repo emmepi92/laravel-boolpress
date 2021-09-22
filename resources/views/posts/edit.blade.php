@@ -35,7 +35,25 @@
         <div class="form-group">
             <label for="img_path">Url immagine</label>
             <input type="text" class="form-control" name="img_path" id="img_path" value="{{ $post->img_path }}">
+        </div>
+
+        <div class="form-group">
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                  <label class="input-group-text" for="category_id">Options</label>
+              </div>
+              <select class="custom-select" id="category_id" name="category_id">
+                  @foreach($categories as $category)
+                   @if ($post->category_id === $category->id)
+                    <option selected value="{{$category->id}}">{{ $category->name }}</option>                      
+                   @else
+                     <option value="{{$category->id}}">{{ $category->name }}</option>
+                   @endif
+                  @endforeach
+              </select>
           </div>
+        </div>
+
     
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
