@@ -83,6 +83,10 @@
                 <div class="title m-b-md">
                     BoolPress
                 </div>
+                <div class="links">
+                    <a href="{{ route('home') }}">Tutti i post</a>
+                </div>
+                <br>
 
                 <div class="links">
                     <a href="{{ route('posts.index') }}">Elenco dei post</a>
